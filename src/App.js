@@ -13,8 +13,10 @@ const App = () => {
   const openai = new OpenAIApi(configuration);
 
   const [storedValues, setStoredValues] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const generateResponse = async (newQuestion, setNewQuestion) => {
+    setIsLoading(true);
     let options = {
       model: "text-davinci-003",
       temperature: 0,
@@ -42,6 +44,7 @@ const App = () => {
       ]);
       setNewQuestion("");
     }
+    setIsLoading(false);
   };
 
   return (
@@ -49,8 +52,8 @@ const App = () => {
       <div className="header-section">
         <h1>Assistente PanvelLabs - by Paulo Salim</h1>
         <p>
-          Olá!Seja bem vindo ao sistema de perguntas e respostas do Panvel Labs!
-          Sou um sistema automatizado, desenvolvido para lhe auxiliar a
+          Olá! Seja bem vindo ao sistema de perguntas e respostas do Panvel
+          Labs! Sou um sistema automatizado, desenvolvido para lhe auxiliar a
           encontrar informações relevantes. Sinta-se a vontade para realizar
           qualquer pergunta e eu farei o meu melhor para trazer informações
           confiáveis.
@@ -58,6 +61,7 @@ const App = () => {
       </div>
 
       <FormSection generateResponse={generateResponse} />
+      {isLoading && <p>Buscando resposta. Por favor, aguarde...</p>}
 
       <AnswerSection storedValues={storedValues} />
     </div>
