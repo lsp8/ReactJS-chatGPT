@@ -86,14 +86,12 @@ const App = () => {
   return (
     <div>
       <div className="header-section">
-        <h1>Assistente PanvelLabs - by Paulo Salim</h1>
+        <h1>ChatGPT em ReactJS by Paulo Salim</h1>
         <p>
-          Olá! Seja bem vindo ao sistema de perguntas e respostas do Panvel
-          Labs! Sou um sistema automatizado, desenvolvido para lhe auxiliar a
-          encontrar informações relevantes. Sinta-se a vontade para realizar
-          qualquer pergunta e eu farei o meu melhor para trazer informações
-          confiáveis.Qual a idade do Silvio Santos? Qual a idade de Donald
-          Trump?
+          Olá! Seja bem vindo ao chatGPT em ReactjJS! Sou um sistema
+          automatizado, desenvolvido para lhe auxiliar a encontrar informações
+          relevantes. Sinta-se a vontade para realizar qualquer pergunta e eu
+          farei o meu melhor para trazer informações confiáveis.
         </p>
       </div>
 
